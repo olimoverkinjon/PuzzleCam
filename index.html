@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PuzzleCam — Qo‘l harakati bilan fotobutka</title>
+<meta name="theme-color" content="#11110f" />
+<meta name="description" content="Qo‘l harakatlari bilan boshqariladigan brauzer fotobutkasi va suratli boshqotirma." />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div id="app">
+  <div id="stage">
+    <video id="webcam" playsinline autoplay muted></video>
+    <canvas id="sceneCanvas"></canvas>
+
+    <div class="hud-top">
+      <div class="brand">PUZZLE·CAM <small data-i18n="tagline">qo‘l harakati bilan fotobutka</small></div>
+      <div class="status-pill">
+        <span id="statusDot" class="status-dot"></span>
+        <span id="statusText" data-i18n="starting">kamera ishga tushmoqda…</span>
+      </div>
+    </div>
+
+    <div id="progressBadge" class="progress-badge">
+      <span id="progressText" data-i18n="progressZero">0 / 9 ta bo‘lak joylandi</span>
+    </div>
+
+    <div id="loadingOverlay">
+      <div class="loader-text" id="loaderText" data-i18n="loading">qo‘lni aniqlash modeli yuklanmoqda…</div>
+      <div class="loader-bar"></div>
+      <button type="button" id="loaderRetry" class="loader-retry hidden" data-i18n="retry">qayta urinish</button>
+    </div>
+
+    <div id="errorBanner"></div>
+  </div>
+
+  <aside id="gallery">
+    <div class="gallery-head">
+      <span class="gallery-title" data-i18n="photos">Suratlar</span>
+      <span class="gallery-count" id="galleryCount">0 / 3</span>
+    </div>
+
+    <div class="strip-complete-msg" id="stripCompleteMsg">
+      <span data-i18n="collectionReady">Suratlar to‘plami tayyor — yuklab oling yoki yangidan boshlang.</span>
+    </div>
+
+    <div id="galleryStrip" class="gallery-strip">
+      <div class="gallery-empty" id="galleryEmpty">
+        <span class="empty-icon" aria-hidden="true">✦</span>
+        <span data-i18n="emptyGallery">Yig‘ilgan suratli boshqotirmalar shu yerda saqlanadi.</span>
+      </div>
+    </div>
+
+    <section class="gesture-guide" aria-label="O‘yin yo‘riqnomasi">
+      <h2 data-i18n="howToPlay">Qanday o‘ynaladi?</h2>
+      <p><strong data-i18n="takePhoto">Suratga olish:</strong> <span data-i18n="takePhotoHelp">ikki qo‘l ko‘rsatkich barmog‘ini ramka qilib, ikkala qo‘lda chimdib turing.</span></p>
+      <p><strong data-i18n="solvePuzzle">Bo‘laklarni yig‘ish:</strong> <span data-i18n="solvePuzzleHelp">bo‘lakni chimdib, kerakli joyiga olib boring.</span></p>
+      <p><strong data-i18n="savePhoto">Saqlash:</strong> <span data-i18n="savePhotoHelp">boshqotirma yig‘ilgach, mushtni qisqa ushlab turing.</span></p>
+    </section>
+
+    <div class="gallery-actions">
+      <button type="button" id="downloadStripBtn" class="gallery-action-btn" disabled data-i18n="downloadPhotos">suratlarni yuklab olish</button>
+      <button type="button" id="resetAllBtn" class="gallery-action-btn gallery-action-btn--danger" data-i18n="startOver">hammasini yangidan boshlash</button>
+    </div>
+
+    <div class="language-switch" role="group" aria-label="Language / Til">
+      <button type="button" class="language-button is-active" data-language="uz" aria-pressed="true">UZ</button>
+      <button type="button" class="language-button" data-language="en" aria-pressed="false">EN</button>
+    </div>
+  </aside>
+
+</div>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
