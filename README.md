@@ -47,7 +47,7 @@ Brauzerda [http://localhost:5500](http://localhost:5500) manzilini ochib, kamera
 - [MediaPipe Tasks Vision](https://developers.google.com/mediapipe) — qo‘l nuqtalarini aniqlash
 - Canvas 2D — kamera tasviri va boshqotirma bo‘laklarini chizish
 - JavaScript ES modullari va CSS
-- Tashqi kutubxonalar CDN orqali yuklanadi; alоҳида o‘rnatish talab qilinmaydi
+- Tashqi kutubxonalar CDN orqali yuklanadi; alohida o‘rnatish talab qilinmaydi
 
 ### Muammolarni bartaraf etish
 
